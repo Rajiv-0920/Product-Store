@@ -17,13 +17,17 @@ async function action({ request }) {
   const formData = await request.formData();
 
   const name = formData.get("name");
-  const price = parseFloat(formData.get("price"));
+  console.log(formData);
+  const price = formData.get("price");
   const image = formData.get("image");
 
-  if (!name) return toast.error("Please enter all required details.");
+  if (!name || !price) {
+    return toast.error("Please enter all required details.");
+  }
 
-  if (!isNaN(price) && price <= 0)
+  if (isNaN(price) || Number(price) <= 0) {
     return toast.error("Price must be a number greater than zero.");
+  }
 
   await createProducts({ name, price, image }, request.signal);
   toast.success("Product created successfully");

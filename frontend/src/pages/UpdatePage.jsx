@@ -28,13 +28,16 @@ async function action({ request, params }) {
   const formData = await request.formData();
 
   const name = formData.get("name");
-  const price = parseFloat(formData.get("price"));
+  const price = formData.get("price");
   const image = formData.get("image");
 
-  if (!name) return toast.error("Please enter all required details.");
+  if (!name || !price) {
+    return toast.error("Please enter all required details.");
+  }
 
-  if (!isNaN(price) && price <= 0)
+  if (isNaN(price) || Number(price) <= 0) {
     return toast.error("Price must be a number greater than zero.");
+  }
 
   const productUpdate = { name, price, image };
 
