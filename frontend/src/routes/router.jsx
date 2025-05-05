@@ -1,9 +1,9 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import "../main.css";
-import { RootLayout } from "../layouts/RootLayout";
-import { homePageRoute } from "../pages/HomePage";
-import { createPageRoute } from "../pages/CreatePage";
-import { updatePageRoute } from "../pages/UpdatePage";
+import { RootLayout } from "../layouts/RootLayout.jsx";
+import { homePageRoute } from "../pages/HomePage.jsx";
+import { createPageRoute } from "../pages/CreatePage.jsx";
+import { updatePageRoute } from "../pages/UpdatePage.jsx";
 
 export const router = createBrowserRouter([
   {

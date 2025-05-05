@@ -1,8 +1,8 @@
 import React from "react";
 import { redirect } from "react-router-dom";
 import { toast } from "react-toastify";
-import { createProducts } from "../api/products";
-import ProductForm from "../components/ProductForm";
+import { createProducts } from "../api/products.js";
+import ProductForm from "../components/ProductForm.jsx";
 
 const CreatePage = () => {
   const data = {

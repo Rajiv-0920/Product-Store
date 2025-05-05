@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useFetcher } from "react-router-dom";
 import SaveIcon from "@mui/icons-material/Save";
 import { toast } from "react-toastify";
-import { DropZone } from "./DropZone";
+import { DropZone } from "./DropZone.jsx";
 
 const ProductForm = ({
   title,

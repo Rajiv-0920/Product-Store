@@ -1,8 +1,8 @@
 import React, { useContext, useMemo } from "react";
 import { useDropzone } from "react-dropzone";
-import { toBase64 } from "../../../../Product Store/frontend/src/utils/toBase64";
+import { toBase64 } from "../utils/toBase64.js";
 import { toast } from "react-toastify";
-import { ThemeContext } from "../layouts/RootLayout";
+import { ThemeContext } from "../layouts/RootLayout.jsx";
 
 const baseStyle = (theme) => ({
   flex: 1,

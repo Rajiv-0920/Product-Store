@@ -1,6 +1,6 @@
 import React from "react";
-import ProductForm from "../components/ProductForm";
-import { getProduct, updateProducts } from "../api/products";
+import ProductForm from "../components/ProductForm.jsx";
+import { getProduct, updateProducts } from "../api/products.js";
 import { redirect, useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 
