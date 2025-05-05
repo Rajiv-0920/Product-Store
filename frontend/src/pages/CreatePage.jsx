@@ -17,7 +17,6 @@ async function action({ request }) {
   const formData = await request.formData();
 
   const name = formData.get("name");
-  console.log(formData);
   const price = formData.get("price");
   const image = formData.get("image");
 

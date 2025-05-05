@@ -6,8 +6,8 @@ import { ProductCard } from "../components/ProductCard.jsx";
 export const Products = createContext();
 
 const HomePage = () => {
-  const loaderData = useLoaderData().data;
-  const [products, setProducts] = useState(loaderData);
+  const { data } = useLoaderData();
+  const [products, setProducts] = useState(data);
 
   return products.length ? (
     <Products.Provider value={{ products, setProducts }}>
@@ -33,12 +33,14 @@ const HomePage = () => {
   );
 };
 
-function loader({ request: { signal } }) {
-  return getProducts({ signal });
+async function loader({ request: { signal } }) {
+  const res = await getProducts({ signal });
+  console.log(res);
+  return { data: res.data };
 }
 
 export const homePageRoute = {
-  element: <HomePage />,
   loader,
+  element: <HomePage />,
   errorElement: <div>Something went wrong</div>,
 };
