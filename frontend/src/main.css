@@ -294,7 +294,7 @@ button[type="submit"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* or 100vh for full screen */
+  min-height: 200px; /* or 100vh for full screen */
 }
 
 @keyframes spin {
